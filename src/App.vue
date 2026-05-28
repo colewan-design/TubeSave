@@ -87,6 +87,7 @@ const videoInfo = ref(null);
 function onPaste(e) {
   const text = e.clipboardData?.getData('text') || '';
   if (text.includes('youtube.com') || text.includes('youtu.be')) {
+    e.preventDefault();
     url.value = text;
     setTimeout(fetchInfo, 100);
   }
